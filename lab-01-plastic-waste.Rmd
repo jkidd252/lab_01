@@ -1,7 +1,7 @@
 ---
 title: "Lab 01 - Plastic waste"
-author: "INSERT NAME HERE"
-date: "`r Sys.Date()`"
+author: Jonathan Kidd   
+date: 30/9/2022
 output: html_document
 ---
 
