@@ -79,7 +79,7 @@ ggplot(data=plastic_waste,
 
 ### Exercise 7
 
-*Remove this text, and add your answer for Exercise 7 here.*
+There is no real helpful relation shown in the graph. 
 
 ```{r plastic-waste-population-total}
 ggplot(data=plastic_waste,
@@ -102,6 +102,8 @@ plastic_waste_edit <- plastic_waste %>%
   mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
   filter(plastic_waste_per_cap < 3)
 
-# remove this comment and add the code for Exercise 8 here
+ggplot(data=plastic_waste_edit,
+       mapping= aes(x= coastal_pop_prop, y = plastic_waste_per_cap, colour = continent))+
+  geom_point()
 ```
 
