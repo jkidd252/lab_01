@@ -37,30 +37,44 @@ ggplot(data = plastic_waste,
 
 ### Exercise 3
 
-*Remove this text, and add your answer for Exercise 3 here.*
+not sure, maybe maps the opacity of the whole graph regardless of the aes() setting and other aesthetic variables.
 
 ### Exercise 4
 
-*Remove this text, and add your answer for Exercise 4 here.*
+the frequency of countries within each region that have similar/close values for plastic waste per capita, the width of the plot shows this quite well.
+whereas in the boxplot the median and quartile values are very unclear, with an axis rescale this maybe more clear. 
 
 ```{r plastic-waste-violin}
-# remove this comment and add the code for Exercise 4 here
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_violin()
+
+ggplot(data = plastic_waste, 
+       mapping = aes(x = continent, 
+                     y = plastic_waste_per_cap)) +
+  geom_boxplot()
 ```
 
 ### Exercise 5
 
-*Remove this text, and add your answer for Exercise 5 here.*
+There is a general increasing trend between plastic waste and mismanged plastic waste, as would be expected. with increased waste comes increased mismanagement, there is a large cluster of data points about the origin, and they generally increase almost linearly from the origin.
 
 ```{r plastic-waste-mismanaged}
-# remove this comment and add the code for Exercise 5 here
+ggplot(data=plastic_waste,
+       mapping = aes(x=plastic_waste_per_cap, y=mismanaged_plastic_waste_per_cap))+
+  geom_point()
 ```
 
 ### Exercise 6
 
-*Remove this text, and add your answer for Exercise 6 here.*
+Europe tend to have low waste mismangement, but steadily increasing waste per caapita. there is no other clear relation between continent and the graph, the general trend is increasing waste mismanagement with increasing waste per capita.
+
 
 ```{r plastic-waste-mismanaged-continent}
-# remove this comment and add the code for Exercise 6 here
+ggplot(data=plastic_waste,
+       mapping = aes(x=plastic_waste_per_cap, y=mismanaged_plastic_waste_per_cap, colour=continent))+
+  geom_point()
 ```
 
 ### Exercise 7
